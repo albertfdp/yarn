@@ -65,11 +65,11 @@ export default class GitFetcher extends BaseFetcher {
   async fetchFromExternal(): Promise<FetchedOverride> {
     const commit = this.hash;
     invariant(commit, 'Commit hash required');
-
+    console.log('fetching ...', this.reference)
     const git = new Git(this.config, this.reference, commit);
     await git.init();
     await git.clone(this.dest);
-
+    console.log(this.reference, 'resolved')
     // Get the tarball filename from the url
     const {pathname} = url.parse(this.reference);
     let tarballFilename;

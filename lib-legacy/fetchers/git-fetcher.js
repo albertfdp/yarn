@@ -117,11 +117,11 @@ class GitFetcher extends (_baseFetcher || _load_baseFetcher()).default {
     return (0, (_asyncToGenerator2 || _load_asyncToGenerator()).default)(function* () {
       const commit = _this2.hash;
       invariant(commit, 'Commit hash required');
-
+      console.log('fetching ...', _this2.reference);
       const git = new (_git || _load_git()).default(_this2.config, _this2.reference, commit);
       yield git.init();
       yield git.clone(_this2.dest);
-
+      console.log(_this2.reference, 'resolved');
       // Get the tarball filename from the url
 
       var _url$parse2 = url.parse(_this2.reference);

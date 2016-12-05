@@ -51,6 +51,7 @@ export function queue<T, U>(
   concurrency: number = Infinity,
 ): Promise<Array<T>> {
   concurrency = Math.min(concurrency, arr.length);
+  console.log('Running with concurrency', concurrency)
 
   // clone
   arr = arr.slice();

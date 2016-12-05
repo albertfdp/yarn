@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var _promise;
 
 function _load_promise() {
-  return _promise = _interopRequireDefault(require("babel-runtime/core-js/promise"));
+  return _promise = _interopRequireDefault(require('babel-runtime/core-js/promise'));
 }
 
 exports.wait = wait;
@@ -70,6 +70,7 @@ function queue(arr, promiseProducer) {
   let concurrency = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Infinity;
 
   concurrency = Math.min(concurrency, arr.length);
+  console.log('Running with concurrency', concurrency);
 
   // clone
   arr = arr.slice();
